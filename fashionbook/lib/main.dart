@@ -1,3 +1,4 @@
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_downloader/flutter_downloader.dart';
 
@@ -5,6 +6,8 @@ import 'WallpaperApp/wall_screen.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
+  Firebase.initializeApp();
+
   await FlutterDownloader.initialize(
       debug: true // optional: set false to disable printing logs to console
       );

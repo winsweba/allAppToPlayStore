@@ -171,25 +171,26 @@ class _FullScreenImagePageState extends State<FullScreenImagePage> {
   // }
   // 
   _save() async {
-    await _askPermission();
+    // await _askPermission();
+    if (await Permission.storage.request().isGranted){
     var response = await Dio().get(widget.imgPath,
         options: Options(responseType: ResponseType.bytes));
     final result =
         await ImageGallerySaver.saveImage(Uint8List.fromList(response.data));
     print(result);
-      
-  }
-
-  _askPermission() async {
-    if (Platform.isIOS) {
-      Map<PermissionGroup, PermissionStatus> permissions =
-          await PermissionHandler()
-              .requestPermissions([PermissionGroup.photos]);
-    } else {
-      PermissionStatus permission = await PermissionHandler()
-          .checkPermissionStatus(PermissionGroup.storage);
     }
   }
+
+  // _askPermission() async {
+  //   if (Platform.isIOS) {
+  //     Map<PermissionGroup, PermissionStatus> permissions =
+  //         await PermissionHandler()
+  //             .requestPermissions([PermissionGroup.photos]);
+  //   } else {
+  //     PermissionStatus permission = await PermissionHandler()
+  //         .checkPermissionStatus(PermissionGroup.storage);
+  //   }
+  // }
 
 }
 

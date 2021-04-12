@@ -21,7 +21,7 @@ class _WallScreenState extends State<WallScreen> {
   StreamSubscription<QuerySnapshot> subscription;
   List<DocumentSnapshot> wallpapersList;
   final CollectionReference collectionReference =
-      Firestore.instance.collection("wallpapers");
+      FirebaseFirestore.instance.collection("wallpapers");
 
   @override
   void initState() {
@@ -29,7 +29,7 @@ class _WallScreenState extends State<WallScreen> {
     super.initState();
     subscription = collectionReference.snapshots().listen((datasnapshot) {
       setState(() {
-        wallpapersList = datasnapshot.documents;
+        wallpapersList = datasnapshot.docs;
       });
     });
 
@@ -55,7 +55,7 @@ class _WallScreenState extends State<WallScreen> {
                 itemCount: wallpapersList.length,
                 itemBuilder: (context, i) {
 
-                  String imgPath = wallpapersList[i].data["url"].toString();
+                  String imgPath = wallpapersList[i].get("url");
 
                   return new Material(
                     elevation: 8.0,
