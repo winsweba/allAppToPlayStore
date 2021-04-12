@@ -190,35 +190,6 @@ class _FullScreenImagePageState extends State<FullScreenImagePage> {
           .checkPermissionStatus(PermissionGroup.storage);
     }
   }
-// void _onImagDownloadButtonPressed() async {
-
-// var response = await http.get(widget.imgPath);
-//      filePath = await ImagePickerSaver.saveFile(fileData: response.bodyBytes);
-//      print(filePath);
-//  _getWallpaper();
-//  }
-
-//  static const platform = const MethodChannel('wallpaper');
-//   Future<void> _getWallpaper() async {
-//     try {
-//       final int result =  await platform.invokeMethod('getWallpaper',{"text":filePath});
-//       //  _onLoading(false);
-//     } on PlatformException catch (e) {
-//       Navigator.pop(context);
-
-//     }
-// }
-//    void _onImageShareButtonPressed() async {
-
-// var response = await http.get('https://mlltgcn1axte.i.optimole.com/h081bd0-Ho6YTIMz/w:auto/h:auto/q:74/https://codesearchonline.com/wp-content/uploads/2020/01/social-media-management-8.png');
-//     filePath = await ImagePickerSaver.saveFile(fileData: response.bodyBytes);
-//     print(filePath);
-    
-//   BASE64_IMAGE = filePath;
-   
-//     final ByteData bytes = await rootBundle.load(BASE64_IMAGE);
-//     await EsysFlutterShare.shareImage('myImageTest.png', bytes, 'my image title');
-//     }
 
 }
 
