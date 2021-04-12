@@ -12,7 +12,6 @@ import 'package:permission_handler/permission_handler.dart';
 // import 'package:flutter/services.dart';
 // import 'package:image_picker_saver/image_picker_saver.dart';
 // import 'package:http/http.dart' as http;
-import 'package:esys_flutter_share/esys_flutter_share.dart';
 
 
 class FullScreenImagePage extends StatefulWidget {
@@ -25,7 +24,6 @@ class FullScreenImagePage extends StatefulWidget {
 
 class _FullScreenImagePageState extends State<FullScreenImagePage> {
   var filePath;
-  String BASE64_IMAGE;
 
   GlobalKey globalKey = GlobalKey();
 
@@ -179,10 +177,7 @@ class _FullScreenImagePageState extends State<FullScreenImagePage> {
     final result =
         await ImageGallerySaver.saveImage(Uint8List.fromList(response.data));
     print(result);
-      BASE64_IMAGE = result;
-   
-    final ByteData bytes = await rootBundle.load(BASE64_IMAGE);
-    await EsysFlutterShare.shareImage('myImageTest.png', bytes, 'my image title');
+      
   }
 
   _askPermission() async {
@@ -226,3 +221,8 @@ class _FullScreenImagePageState extends State<FullScreenImagePage> {
 //     }
 
 }
+
+
+
+// Share.shareFiles(['${directory.path}/image.jpg'], text: 'Great picture');
+// Share.shareFiles(['${directory.path}/image1.jpg', '${directory.path}/image2.jpg']);
