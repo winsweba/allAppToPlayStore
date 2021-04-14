@@ -185,7 +185,7 @@ class _FullScreenImagePageState extends State<FullScreenImagePage> {
     Fluttertoast.showToast(
         msg: " Image Save to Gallery ",
         toastLength: Toast.LENGTH_SHORT,
-        gravity: ToastGravity.CENTER,
+        gravity: ToastGravity.BOTTOM,
         timeInSecForIosWeb: 1,
         backgroundColor: Colors.blueAccent,
         textColor: Colors.black,
