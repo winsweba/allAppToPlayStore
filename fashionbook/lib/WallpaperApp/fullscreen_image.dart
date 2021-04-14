@@ -5,9 +5,10 @@ import 'dart:ui';
 import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
-import 'package:flutter/services.dart';
+import 'package:fluttertoast/fluttertoast.dart';
 import 'package:image_gallery_saver/image_gallery_saver.dart';
 import 'package:permission_handler/permission_handler.dart';
+import 'package:share/share.dart';
 // import 'package:image';
 // import 'package:flutter/services.dart';
 // import 'package:image_picker_saver/image_picker_saver.dart';
@@ -178,6 +179,19 @@ class _FullScreenImagePageState extends State<FullScreenImagePage> {
     final result =
         await ImageGallerySaver.saveImage(Uint8List.fromList(response.data));
     print(result);
+
+    // Share.shareFiles(['${result.path}/image.jpg'], text: 'Great picture');
+
+    Fluttertoast.showToast(
+        msg: " Image Save to Gallery ",
+        toastLength: Toast.LENGTH_SHORT,
+        gravity: ToastGravity.CENTER,
+        timeInSecForIosWeb: 1,
+        backgroundColor: Colors.blueAccent,
+        textColor: Colors.black,
+        fontSize: 16.0
+    );
+
     }
   }
 

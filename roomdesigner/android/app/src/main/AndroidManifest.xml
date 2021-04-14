@@ -1,5 +1,5 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.roomdesigner">
+    package="com.winsweb.winchseter.roomdesigner">
    <application
         android:label="roomdesigner"
         android:icon="@mipmap/ic_launcher">

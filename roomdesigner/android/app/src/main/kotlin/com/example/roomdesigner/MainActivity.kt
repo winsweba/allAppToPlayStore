@@ -1,4 +1,4 @@
-package com.example.roomdesigner
+package com.winsweb.winchseter.roomdesigner
 
 import io.flutter.embedding.android.FlutterActivity
 
