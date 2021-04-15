@@ -29,7 +29,7 @@ class _QuoteScreenState extends State<QuoteScreen> {
   BannerAd createBannerAdd() {
     return BannerAd(
         targetingInfo: targetingInfo,
-        adUnitId: BannerAd.testAdUnitId,
+        adUnitId: "ca-app-pub-2635835949649414/7196948021",
         size: AdSize.smartBanner,
         listener: (MobileAdEvent event) {
           print('Bnner Event: $event');
@@ -39,7 +39,7 @@ class _QuoteScreenState extends State<QuoteScreen> {
   InterstitialAd createInterstitialAd() {
     return InterstitialAd(
         targetingInfo: targetingInfo,
-        adUnitId: InterstitialAd.testAdUnitId,
+        adUnitId: "ca-app-pub-2635835949649414/9613343909",
         listener: (MobileAdEvent event) {
           print('interstitial event: $event');
         });
@@ -133,9 +133,7 @@ class _QuoteScreenState extends State<QuoteScreen> {
                         new BorderRadius.all(new Radius.circular(8.0)),
                     child: new InkWell(
                       onTap: () {
-                        _bannerAd?.dispose();
-                        _bannerAd = null;
-                        _interstitialAd?.show();
+                        
                         Navigator.push(
                             context,
                             new MaterialPageRoute(

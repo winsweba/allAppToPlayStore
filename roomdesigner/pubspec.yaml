@@ -46,6 +46,14 @@ dependencies:
   fluttertoast: ^8.0.3
   # firebase_admob: ^0.5.2
   # firebase_analytics: ^0.2.3
+  flutter_launcher_icons: ^0.9.0
+
+
+
+flutter_icons:
+  image_path: "assets/room.png"
+  android: true
+  ios: true
 
 dev_dependencies:
   flutter_test:

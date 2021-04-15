@@ -104,12 +104,12 @@ class _HomeState extends State<Home> {
                 itemBuilder: (context, index) {
                   return CategoriesList(titel: categories[index].categoriesName, 
                   imageUrls: categories[index].imageUrl,);
-                }),
+                },),
             ),
             
            wallpaperList(wallpapers: wallpapers,context: context),
 
-           SizedBox(height: 16),
+           
           ],
         ), ),
       ),
@@ -135,6 +135,7 @@ class CategoriesList extends StatelessWidget {
         margin: EdgeInsets.only(right: 4 ),
         child: Stack(
           children: <Widget>[
+            // SizedBox(height: 40),
             ClipRRect(
               borderRadius: BorderRadius.circular(16), 
               child: Image.network(imageUrls, height: 100, width: 100,fit: BoxFit.cover,)),

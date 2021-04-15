@@ -1,4 +1,4 @@
-package com.example.lovequotes
+package com.winsweb.winchseter.lovequotes
 
 import io.flutter.embedding.android.FlutterActivity
 

@@ -6,7 +6,7 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_downloader/flutter_downloader.dart';
 import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
-import 'package:hairstyles/WallpaperApp/fullscreen_image.dart';
+import 'package:roomdesigner/WallpaperApp/room_fullscreen_image.dart';
 
 const String testDevice = '';
 
@@ -21,7 +21,7 @@ class _WallScreenState extends State<WallScreen> {
   StreamSubscription<QuerySnapshot> subscription;
   List<DocumentSnapshot> wallpapersList;
   final CollectionReference collectionReference =
-      FirebaseFirestore.instance.collection("hairstyles");
+      FirebaseFirestore.instance.collection("roomdesign");
 
   @override
   void initState() {
@@ -46,7 +46,7 @@ class _WallScreenState extends State<WallScreen> {
   Widget build(BuildContext context) {
     return new Scaffold(
         appBar: new AppBar(
-          title: new Text("Fashion Book"),
+          title: new Text("Room Design "),
         ),
         body: wallpapersList != null
             ? new StaggeredGridView.countBuilder(
@@ -55,7 +55,7 @@ class _WallScreenState extends State<WallScreen> {
                 itemCount: wallpapersList.length,
                 itemBuilder: (context, i) {
 
-                  String imgPath = wallpapersList[i].get("hair");
+                  String imgPath = wallpapersList[i].get("art");
 
                   return new Material(
                     elevation: 8.0,
