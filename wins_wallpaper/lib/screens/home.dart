@@ -24,7 +24,7 @@ class _HomeState extends State<Home> {
 
 
   getTrendingWallpaper() async{
-    var response = await http.get("https://api.pexels.com/v1/curated?per_page=40&page=1", 
+    var response = await http.get("https://api.pexels.com/v1/curated?per_page=20&page=1", 
     headers: {
       "Authorization" : apiKey,
     });
@@ -106,7 +106,7 @@ class _HomeState extends State<Home> {
                   imageUrls: categories[index].imageUrl,);
                 },),
             ),
-            
+             SizedBox(height: 16),
            wallpaperList(wallpapers: wallpapers,context: context),
 
            
@@ -135,7 +135,6 @@ class CategoriesList extends StatelessWidget {
         margin: EdgeInsets.only(right: 4 ),
         child: Stack(
           children: <Widget>[
-            // SizedBox(height: 40),
             ClipRRect(
               borderRadius: BorderRadius.circular(16), 
               child: Image.network(imageUrls, height: 100, width: 100,fit: BoxFit.cover,)),
@@ -155,4 +154,5 @@ class CategoriesList extends StatelessWidget {
       ),
     );
   }
+  
 }

@@ -7,7 +7,8 @@ xmlns:tools="http://schemas.android.com/tools"
 
    <application
         android:label="hairstyles"
-        android:icon="@mipmap/ic_launcher">
+        android:icon="@mipmap/ic_launcher"
+        android:requestLegacyExternalStorage="true">
         <activity
             android:name=".MainActivity"
             android:launchMode="singleTop"
@@ -42,5 +43,10 @@ xmlns:tools="http://schemas.android.com/tools"
         <meta-data
             android:name="flutterEmbedding"
             android:value="2" />
+            
+            <meta-data
+            android:name="com.google.android.gms.ads.APPLICATION_ID"
+            android:value="ca-app-pub-2635835949649414~7580091406"/>
+
     </application>
 </manifest>

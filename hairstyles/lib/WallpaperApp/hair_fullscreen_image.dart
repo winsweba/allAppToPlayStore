@@ -84,93 +84,9 @@ class _FullScreenImagePageState extends State<FullScreenImagePage> {
   }
 
 
-  // Future<void> saveImage (String _name) async {
-  //   final status = await Permission.storage.request();
 
-  //               if (status.isGranted) {
-  //                 final externalDir = await getExternalStorageDirectory();
-
-  //                 final dir = await getApplicationDocumentsDirectory();
-
-  //                 var _localPath = dir.path +  _name;
-                  
-  //                 final savedDir = Directory(_localPath);
-
-  //                 final id = await FlutterDownloader.enqueue(
-  //                   url: imgPath,
-  //                   savedDir: externalDir.path + "Download",
-  //                   fileName: "download",
-  //                   showNotification: true,
-  //                   openFileFromNotification: true,
-  //                 );
-
-
-  //               } else {
-  //                 print("Permission deined");
-  //               }
-  // }
-
-  // Future<void> saveImage (String _name) async {
-  //   final status = await Permission.storage.request();
-
-  //               if (status.isGranted) {
-  //                 // final externalDir = await getExternalStorageDirectory();
-
-  //                 final dir = await getApplicationDocumentsDirectory();
-
-  //                 var _localPath = dir.path +  _name;
-                  
-  //                 final savedDir = Directory(_localPath);
-
-  //                 await savedDir.create(recursive: true).then((value) async{
-
-  //                   String _task = await FlutterDownloader.enqueue(
-  //                   url: imgPath,
-  //                   savedDir: _localPath,
-  //                   fileName: "download",
-  //                   showNotification: true,
-  //                   openFileFromNotification: true,
-  //                 );
-  //                 print(_task);
-
-  //                 });
-
-  //               } else {
-  //                 print("Permission deined");
-  //               }
-  // }
-
-  // Future<void> _save() async {
-  //   RenderRepaintBoundary boundary =
-  //       globalKey.currentContext.findRenderObject();
-  //   ui.Image image = await boundary.toImage();
-  //   ByteData byteData = await image.toByteData(format: ui.ImageByteFormat.png);
-  //   Uint8List pngBytes = byteData.buffer.asUint8List();
-
-  //   //Request permissions if not already granted
-  //   if (!(await Permission.storage.status.isGranted))
-  //     await Permission.storage.request();
-
-  //   final result = await ImageGallerySaver.saveImage(
-  //       Uint8List.fromList(pngBytes),
-  //       quality: 60,
-  //       name: "canvas_image");
-  //   print(result);
-  // }
-
-  // _save() async {
-  //  var response = await Dio().get(
-  //          "https://ss0.baidu.com/94o3dSag_xI4khGko9WTAnF6hhy/image/h%3D300/sign=a62e824376d98d1069d40a31113eb807/838ba61ea8d3fd1fc9c7b6853a4e251f94ca5f46.jpg",
-  //          options: Options(responseType: ResponseType.bytes));
-  //  final result = await ImageGallerySaver.saveImage(
-  //          Uint8List.fromList(response.data),
-  //          quality: 60,
-  //          name: "hello");
-  //  print(result);
-  // }
-  // 
   _save() async {
-    // await _askPermission();
+    
     if (await Permission.storage.request().isGranted){
     var response = await Dio().get(widget.imgPath,
         options: Options(responseType: ResponseType.bytes));
@@ -178,7 +94,7 @@ class _FullScreenImagePageState extends State<FullScreenImagePage> {
         await ImageGallerySaver.saveImage(Uint8List.fromList(response.data));
     print(result);
 
-    // Share.shareFiles(['${result.path}/image.jpg'], text: 'Great picture');
+    
 
     Fluttertoast.showToast(
         msg: " Image Save to Gallery ",
@@ -192,17 +108,6 @@ class _FullScreenImagePageState extends State<FullScreenImagePage> {
 
     }
   }
-
-  // _askPermission() async {
-  //   if (Platform.isIOS) {
-  //     Map<PermissionGroup, PermissionStatus> permissions =
-  //         await PermissionHandler()
-  //             .requestPermissions([PermissionGroup.photos]);
-  //   } else {
-  //     PermissionStatus permission = await PermissionHandler()
-  //         .checkPermissionStatus(PermissionGroup.storage);
-  //   }
-  // }
 
 }
 

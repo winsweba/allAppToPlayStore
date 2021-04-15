@@ -34,6 +34,13 @@ Widget wallpaperList({List<WallpaperModel> wallpapers , context}){
              },
             child: Hero(
               tag: wallpaper.src.portrait,
+              placeholderBuilder: (context, size ,widget) {
+                return Container(
+                  height: 50,
+                  width: 50,
+                  child: CircularProgressIndicator(),
+                );
+              } ,
               child: Container(
                 child: ClipRRect( 
                   borderRadius: BorderRadius.circular(16),

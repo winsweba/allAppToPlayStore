@@ -46,7 +46,8 @@ class _WallScreenState extends State<WallScreen> {
   Widget build(BuildContext context) {
     return new Scaffold(
         appBar: new AppBar(
-          title: new Text("Room Design "),
+          backgroundColor: Colors.pinkAccent,
+          title: new Text("Room Design ", style: TextStyle(fontWeight: FontWeight.bold ),),
         ),
         body: wallpapersList != null
             ? new StaggeredGridView.countBuilder(

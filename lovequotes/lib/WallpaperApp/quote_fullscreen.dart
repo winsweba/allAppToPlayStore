@@ -1,3 +1,5 @@
+import 'dart:async';
+
 import 'package:firebase_admob/firebase_admob.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -67,6 +69,11 @@ class _FullScreenQuotePageState extends State<FullScreenQuotePage> {
 
   @override
   Widget build(BuildContext context) {
+
+    Timer(Duration(seconds: 10), () {
+      _bannerAd?.show();
+    });
+    
     return new Scaffold(
       backgroundColor: _randomColor.randomColor(
                       colorBrightness: ColorBrightness.light

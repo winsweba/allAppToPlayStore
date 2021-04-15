@@ -46,6 +46,7 @@ class _WallScreenState extends State<WallScreen> {
   Widget build(BuildContext context) {
     return new Scaffold(
         appBar: new AppBar(
+          backgroundColor: Colors.pinkAccent,
           title: new Text(" Hairstyle "),
         ),
         body: wallpapersList != null
