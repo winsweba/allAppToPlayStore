@@ -1,4 +1,4 @@
-package com.example.wins_recipe
+package com.winsweb.winchseter.wins_recipe
 
 import io.flutter.embedding.android.FlutterActivity
 

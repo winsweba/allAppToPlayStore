@@ -37,6 +37,176 @@
     },
     {
       "client_info": {
+        "mobilesdk_app_id": "1:547151552975:android:0659c170c7052af67af2ba",
+        "android_client_info": {
+          "package_name": "com.winsweb.win.winchester"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "547151552975-99qhvg7u2a30cn1lsam5vegia06dhpek.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA2_gsADk4mvL4al5UkRr7heUU0MpM-MPA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "547151552975-99qhvg7u2a30cn1lsam5vegia06dhpek.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:547151552975:android:307b5ac32639c2c37af2ba",
+        "android_client_info": {
+          "package_name": "com.winsweb.winchseter.hairstyles"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "547151552975-bu8jvdmkdgu3t62o4kbviagvrdmp75fo.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.winsweb.winchseter.hairstyles",
+            "certificate_hash": "25321bf5c8a6311bf0be774b98576468b81a90bb"
+          }
+        },
+        {
+          "client_id": "547151552975-99qhvg7u2a30cn1lsam5vegia06dhpek.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA2_gsADk4mvL4al5UkRr7heUU0MpM-MPA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "547151552975-99qhvg7u2a30cn1lsam5vegia06dhpek.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:547151552975:android:5fd78e9e69374fb77af2ba",
+        "android_client_info": {
+          "package_name": "com.winsweb.winchseter.lovequotes"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "547151552975-99qhvg7u2a30cn1lsam5vegia06dhpek.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA2_gsADk4mvL4al5UkRr7heUU0MpM-MPA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "547151552975-99qhvg7u2a30cn1lsam5vegia06dhpek.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      },
+      "admob_app_id": "ca-app-pub-2635835949649414~7580091406"
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:547151552975:android:b76d28067256788d7af2ba",
+        "android_client_info": {
+          "package_name": "com.winsweb.winchseter.multivationalquotes"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "547151552975-9dvrk7jueb6s1464hmv49p2tbgv1ffs9.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.winsweb.winchseter.multivationalquotes",
+            "certificate_hash": "25321bf5c8a6311bf0be774b98576468b81a90bb"
+          }
+        },
+        {
+          "client_id": "547151552975-99qhvg7u2a30cn1lsam5vegia06dhpek.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA2_gsADk4mvL4al5UkRr7heUU0MpM-MPA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "547151552975-99qhvg7u2a30cn1lsam5vegia06dhpek.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:547151552975:android:1dd1221d08c758267af2ba",
+        "android_client_info": {
+          "package_name": "com.winsweb.winchseter.roomdesigner"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "547151552975-op7m99bh8aktkrror5o8536lic53lq31.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.winsweb.winchseter.roomdesigner",
+            "certificate_hash": "25321bf5c8a6311bf0be774b98576468b81a90bb"
+          }
+        },
+        {
+          "client_id": "547151552975-99qhvg7u2a30cn1lsam5vegia06dhpek.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA2_gsADk4mvL4al5UkRr7heUU0MpM-MPA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "547151552975-99qhvg7u2a30cn1lsam5vegia06dhpek.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
         "mobilesdk_app_id": "1:547151552975:android:1e1af3b3046327857af2ba",
         "android_client_info": {
           "package_name": "tk.winsweb.myrestaurant"

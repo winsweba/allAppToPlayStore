@@ -68,7 +68,7 @@ class _QuoteScreenState extends State<QuoteScreen> {
   StreamSubscription<QuerySnapshot> subscription;
   List<DocumentSnapshot> quoteList;
   final CollectionReference collectionReference =
-      FirebaseFirestore.instance.collection("quote");
+      FirebaseFirestore.instance.collection("multivation");
 
   @override
   void initState() {
@@ -112,7 +112,7 @@ class _QuoteScreenState extends State<QuoteScreen> {
                         colorBrightness: ColorBrightness.veryDark
                     ),
                     centerTitle: true,
-          title: new Text("Love Quote", style: TextStyle(fontSize: 20.0),),
+          title: new Text("Multivational Quote", style: TextStyle(fontSize: 20.0),),
         ),
         body: quoteList != null
             ? new StaggeredGridView.countBuilder(
@@ -121,7 +121,7 @@ class _QuoteScreenState extends State<QuoteScreen> {
                 itemCount: quoteList.length,
                 itemBuilder: (context, i) {
 
-                  String quote = quoteList[i].get("words");
+                  String quote = quoteList[i].get("quote");
 
                   return new Material(
                     color: _randomColor.randomColor(
