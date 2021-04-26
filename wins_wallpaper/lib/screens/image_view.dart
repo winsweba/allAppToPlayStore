@@ -9,6 +9,7 @@ import 'package:image_gallery_saver/image_gallery_saver.dart';
 import 'package:path_provider/path_provider.dart';
 import 'package:permission_handler/permission_handler.dart';
 import 'package:wallpaperplugin/wallpaperplugin.dart';
+import 'package:wins_wallpaper/admob_service.dart';
 //import 'package:image_gallery_saver/image_gallery_saver.dart';
 // import 'package:permission_handler/permission_handler.dart';
 
@@ -47,6 +48,7 @@ class _ImageViewState extends State<ImageView> {
             GestureDetector(
               onTap: () {
                 // ignore: unnecessary_statements
+                AdmobService.showInterstitialAd();
                 showDialog(
                             context: context,
                             builder: (context) => _onTapImage(
@@ -86,6 +88,7 @@ class _ImageViewState extends State<ImageView> {
             GestureDetector(
               onTap: () {
                 // ignore: unnecessary_statements
+                AdmobService.showInterstitialAd();
                 _save();
               },
               child: Stack(
@@ -123,6 +126,7 @@ class _ImageViewState extends State<ImageView> {
 
             GestureDetector(
               onTap: () {
+                AdmobService.showInterstitialAd();
                 Navigator.pop(context);
               },
               child: Text(
