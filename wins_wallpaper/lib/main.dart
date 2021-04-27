@@ -4,7 +4,7 @@ import 'package:wins_wallpaper/screens/home.dart';
 
 void main() {
   WidgetsFlutterBinding.ensureInitialized();
-  AdmobService.initialize();
+  // AdmobService.initialize();
   runApp(MyApp());
 }
 

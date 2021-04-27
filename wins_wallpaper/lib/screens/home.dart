@@ -1,13 +1,10 @@
 import 'dart:convert';
 
 import 'package:flutter/material.dart';
-import 'package:google_mobile_ads/google_mobile_ads.dart';
-import 'package:wins_wallpaper/admob_service.dart';
 import 'package:wins_wallpaper/data/data.dart';
 import 'package:wins_wallpaper/models/categories_model.dart';
 import 'package:wins_wallpaper/models/wallpaper_model.dart';
 import 'package:wins_wallpaper/screens/categories.dart';
-import 'package:wins_wallpaper/screens/image_view.dart';
 import 'package:wins_wallpaper/screens/search.dart';
 import 'package:wins_wallpaper/widget/app_title.dart';
 import 'package:http/http.dart' as http;
@@ -118,13 +115,13 @@ class _HomeState extends State<Home> {
       ),
 
       // ADMOB BANNER
-      bottomNavigationBar: Container(
-        height: 50,
-        child: AdWidget(
-          key: UniqueKey(),
-          ad: AdmobService.createBannerAd()..load(),
-        ),
-      ),
+      // bottomNavigationBar: Container(
+      //   height: 50,
+      //   child: AdWidget(
+      //     key: UniqueKey(),
+      //     ad: AdmobService.createBannerAd()..load(),
+      //   ),
+      // ),
       
     );
   }

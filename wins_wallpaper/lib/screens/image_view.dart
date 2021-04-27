@@ -48,7 +48,7 @@ class _ImageViewState extends State<ImageView> {
             GestureDetector(
               onTap: () {
                 // ignore: unnecessary_statements
-                AdmobService.showInterstitialAd();
+                // AdmobService.showInterstitialAd();
                 showDialog(
                             context: context,
                             builder: (context) => _onTapImage(
@@ -88,7 +88,7 @@ class _ImageViewState extends State<ImageView> {
             GestureDetector(
               onTap: () {
                 // ignore: unnecessary_statements
-                AdmobService.showInterstitialAd();
+                // AdmobService.showInterstitialAd();
                 _save();
               },
               child: Stack(
@@ -126,7 +126,7 @@ class _ImageViewState extends State<ImageView> {
 
             GestureDetector(
               onTap: () {
-                AdmobService.showInterstitialAd();
+                // AdmobService.showInterstitialAd();
                 Navigator.pop(context);
               },
               child: Text(
