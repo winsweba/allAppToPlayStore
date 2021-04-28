@@ -4,8 +4,8 @@ import 'dart:async';
 
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:fashionbook/WallpaperApp/fullscreen_image.dart';
+import 'package:firebase_admob/firebase_admob.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_downloader/flutter_downloader.dart';
 import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
 
 const String testDevice = '';
@@ -17,6 +17,30 @@ class WallScreen extends StatefulWidget {
 }
 
 class _WallScreenState extends State<WallScreen> {
+
+  BannerAd _bannerAd;
+  InterstitialAd _interstitialAd;
+  static const MobileAdTargetingInfo targetingInfo = MobileAdTargetingInfo();
+
+  BannerAd createBannerAdd() {
+    return BannerAd(
+        targetingInfo: targetingInfo,
+        adUnitId: BannerAd.testAdUnitId,
+        size: AdSize.smartBanner,
+        listener: (MobileAdEvent event) {
+          print('Bnner Event: $event');
+        });
+  }
+
+  InterstitialAd createInterstitialAd() {
+    return InterstitialAd(
+        targetingInfo: targetingInfo,
+        adUnitId: InterstitialAd.testAdUnitId,
+        listener: (MobileAdEvent event) {
+          print('interstitial event: $event');
+        });
+  }
+
 
   StreamSubscription<QuerySnapshot> subscription;
   List<DocumentSnapshot> wallpapersList;
@@ -34,18 +58,35 @@ class _WallScreenState extends State<WallScreen> {
     });
 
     // _currentScreen();
+    
+    // ADS ADMOB
+    
+    FirebaseAdMob.instance.initialize(appId: 'ca-app-pub-2635835949649414~7580091406');
+    _bannerAd = createBannerAdd()..load();
+
+     _interstitialAd = createInterstitialAd()..load();
+
   }
 
   @override
   void dispose() {
+    _bannerAd?.dispose();
+    _interstitialAd?.dispose();
     subscription?.cancel();
     super.dispose();
   }
 
   @override
   Widget build(BuildContext context) {
+
+    Timer(Duration(seconds: 10), () {
+      _bannerAd?.show();
+    });
+
     return new Scaffold(
         appBar: new AppBar(
+          centerTitle: true,
+          backgroundColor: Colors.pinkAccent,
           title: new Text("Fashion Book"),
         ),
         body: wallpapersList != null

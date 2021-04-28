@@ -42,10 +42,7 @@ class _FullScreenQuotePageState extends State<FullScreenQuotePage> {
     @override
   void initState() {
     // TODO: implement initState
-    super.initState();
-
-    // _currentScreen();
-    // 
+    super.initState(); 
     // ADS ADMOB
     
     FirebaseAdMob.instance.initialize(appId: 'ca-app-pub-2635835949649414~7580091406');

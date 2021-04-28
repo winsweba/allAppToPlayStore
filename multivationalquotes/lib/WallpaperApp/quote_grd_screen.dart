@@ -1,12 +1,11 @@
 
-
 import 'dart:async';
 
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:google_fonts/google_fonts.dart';
+import 'package:firebase_admob/firebase_admob.dart';
 import 'package:random_color/random_color.dart';
 
 import 'quote_fullscreen.dart';
@@ -21,28 +20,28 @@ class QuoteScreen extends StatefulWidget {
 
 class _QuoteScreenState extends State<QuoteScreen> {
 
-  // BannerAd _bannerAd;
-  // InterstitialAd _interstitialAd;
-  // static const MobileAdTargetingInfo targetingInfo = MobileAdTargetingInfo();
+  BannerAd _bannerAd;
+  InterstitialAd _interstitialAd;
+  static const MobileAdTargetingInfo targetingInfo = MobileAdTargetingInfo();
 
-  // BannerAd createBannerAdd() {
-  //   return BannerAd(
-  //       targetingInfo: targetingInfo,
-  //       adUnitId: BannerAd.testAdUnitId,
-  //       size: AdSize.smartBanner,
-  //       listener: (MobileAdEvent event) {
-  //         print('Bnner Event: $event');
-  //       });
-  // }
+  BannerAd createBannerAdd() {
+    return BannerAd(
+        targetingInfo: targetingInfo,
+        adUnitId: BannerAd.testAdUnitId,
+        size: AdSize.smartBanner,
+        listener: (MobileAdEvent event) {
+          print('Bnner Event: $event');
+        });
+  }
 
-  // InterstitialAd createInterstitialAd() {
-  //   return InterstitialAd(
-  //       targetingInfo: targetingInfo,
-  //       adUnitId: InterstitialAd.testAdUnitId,
-  //       listener: (MobileAdEvent event) {
-  //         print('interstitial event: $event');
-  //       });
-  // }
+  InterstitialAd createInterstitialAd() {
+    return InterstitialAd(
+        targetingInfo: targetingInfo,
+        adUnitId: InterstitialAd.testAdUnitId,
+        listener: (MobileAdEvent event) {
+          print('interstitial event: $event');
+        });
+  }
 
   //  @override
   // void initState() {
@@ -84,16 +83,16 @@ class _QuoteScreenState extends State<QuoteScreen> {
     // 
     // ADS ADMOB
     
-    // FirebaseAdMob.instance.initialize(appId: 'ca-app-pub-2635835949649414~7580091406');
-    // _bannerAd = createBannerAdd()..load();
+    FirebaseAdMob.instance.initialize(appId: 'ca-app-pub-2635835949649414~7580091406');
+    _bannerAd = createBannerAdd()..load();
 
-    //  _interstitialAd = createInterstitialAd()..load();
+     _interstitialAd = createInterstitialAd()..load();
   }
 
   @override
   void dispose() {
-    // _bannerAd?.dispose();
-    // _interstitialAd?.dispose();
+    _bannerAd?.dispose();
+    _interstitialAd?.dispose();
     subscription?.cancel();
     super.dispose();
   }

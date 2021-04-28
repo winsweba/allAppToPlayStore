@@ -1,14 +1,65 @@
+import 'dart:async';
+
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:random_color/random_color.dart';
 import 'package:share/share.dart';
+import 'package:firebase_admob/firebase_admob.dart';
 
-class FullScreenQuotePage extends StatelessWidget {
-
-  final RandomColor _randomColor = RandomColor();
+class FullScreenQuotePage extends StatefulWidget {
 
   String quote;
   FullScreenQuotePage(this.quote);
+
+  @override
+  _FullScreenQuotePageState createState() => _FullScreenQuotePageState();
+}
+
+class _FullScreenQuotePageState extends State<FullScreenQuotePage> {
+
+  BannerAd _bannerAd;
+  InterstitialAd _interstitialAd;
+  static const MobileAdTargetingInfo targetingInfo = MobileAdTargetingInfo();
+
+  BannerAd createBannerAdd() {
+    return BannerAd(
+        targetingInfo: targetingInfo,
+        adUnitId: BannerAd.testAdUnitId,
+        size: AdSize.smartBanner,
+        listener: (MobileAdEvent event) {
+          print('Bnner Event: $event');
+        });
+  }
+
+  InterstitialAd createInterstitialAd() {
+    return InterstitialAd(
+        targetingInfo: targetingInfo,
+        adUnitId: InterstitialAd.testAdUnitId,
+        listener: (MobileAdEvent event) {
+          print('interstitial event: $event');
+        });
+  }
+  
+    @override
+  void initState() {
+    // TODO: implement initState
+    super.initState(); 
+    // ADS ADMOB
+    
+    FirebaseAdMob.instance.initialize(appId: 'ca-app-pub-2635835949649414~7580091406');
+    _bannerAd = createBannerAdd()..load();
+
+     _interstitialAd = createInterstitialAd()..load();
+  }
+
+  @override
+  void dispose() {
+    _bannerAd?.dispose();
+    _interstitialAd?.dispose();
+    super.dispose();
+  }
+
+  final RandomColor _randomColor = RandomColor();
 
   final LinearGradient backgroundGradient = new LinearGradient(
       colors: [new Color(0x10000000), new Color(0x30000000)],
@@ -17,6 +68,11 @@ class FullScreenQuotePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+
+    Timer(Duration(seconds: 10), () {
+      _bannerAd?.show();
+    });
+    
     return new Scaffold(
       backgroundColor: _randomColor.randomColor(
                       colorBrightness: ColorBrightness.light
@@ -28,7 +84,7 @@ class FullScreenQuotePage extends StatelessWidget {
             children: <Widget>[
               new Align(
                 alignment: Alignment.center,
-                child: Text(quote, textAlign: TextAlign.center,
+                child: Text(widget.quote, textAlign: TextAlign.center,
                         style: GoogleFonts.dosis(
                           fontSize: 30.0,
                           fontWeight: FontWeight.bold,
@@ -52,7 +108,7 @@ class FullScreenQuotePage extends StatelessWidget {
                         ),
                         onPressed: () => Navigator.of(context).pop(),
                       ),
-                      actions: [IconButton(icon: Icon(Icons.share, size: 36,), onPressed: () => share(context, quote) , )],
+                      actions: [IconButton(icon: Icon(Icons.share, size: 36,), onPressed: () => share(context, widget.quote) , )],
                     )
                   ],
                 ),
@@ -72,5 +128,4 @@ class FullScreenQuotePage extends StatelessWidget {
     
     // Share.shareFiles(text, subject: quotes.toString());
   }
-
 }

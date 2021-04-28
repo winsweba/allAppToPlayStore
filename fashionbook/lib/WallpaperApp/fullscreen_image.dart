@@ -1,14 +1,15 @@
 
-import 'dart:io';
+import 'dart:async';
+
 import 'dart:typed_data';
 import 'dart:ui';
 import 'package:dio/dio.dart';
+import 'package:firebase_admob/firebase_admob.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 import 'package:image_gallery_saver/image_gallery_saver.dart';
 import 'package:permission_handler/permission_handler.dart';
-import 'package:share/share.dart';
 // import 'package:image';
 // import 'package:flutter/services.dart';
 // import 'package:image_picker_saver/image_picker_saver.dart';
@@ -21,9 +22,53 @@ class FullScreenImagePage extends StatefulWidget {
 
   @override
   _FullScreenImagePageState createState() => _FullScreenImagePageState();
+  
 }
 
 class _FullScreenImagePageState extends State<FullScreenImagePage> {
+  
+  BannerAd _bannerAd;
+  InterstitialAd _interstitialAd;
+  static const MobileAdTargetingInfo targetingInfo = MobileAdTargetingInfo();
+
+  BannerAd createBannerAdd() {
+    return BannerAd(
+        targetingInfo: targetingInfo,
+        adUnitId: BannerAd.testAdUnitId,
+        size: AdSize.smartBanner,
+        listener: (MobileAdEvent event) {
+          print('Bnner Event: $event');
+        });
+  }
+
+  InterstitialAd createInterstitialAd() {
+    return InterstitialAd(
+        targetingInfo: targetingInfo,
+        adUnitId: InterstitialAd.testAdUnitId,
+        listener: (MobileAdEvent event) {
+          print('interstitial event: $event');
+        });
+  }
+  
+    @override
+  void initState() {
+    // TODO: implement initState
+    super.initState(); 
+    // ADS ADMOB
+    
+    FirebaseAdMob.instance.initialize(appId: 'ca-app-pub-2635835949649414~7580091406');
+    _bannerAd = createBannerAdd()..load();
+
+     _interstitialAd = createInterstitialAd()..load();
+  }
+
+  @override
+  void dispose() {
+    _bannerAd?.dispose();
+    _interstitialAd?.dispose();
+    super.dispose();
+  }
+
   var filePath;
 
   GlobalKey globalKey = GlobalKey();
@@ -35,6 +80,11 @@ class _FullScreenImagePageState extends State<FullScreenImagePage> {
 
   @override
   Widget build(BuildContext context) {
+
+    Timer(Duration(seconds: 10), () {
+      _bannerAd?.show();
+    });
+    
     return new Scaffold(
       key: globalKey ,
       body: new SizedBox.expand(
@@ -72,7 +122,14 @@ class _FullScreenImagePageState extends State<FullScreenImagePage> {
                           color: Colors.black,
                           size: 26.0,
                         ),
-                         onPressed: () => _save() )
+                         onPressed: () {
+
+                        _bannerAd?.dispose();
+                        _bannerAd = null;
+                        _interstitialAd?.show();
+
+                            _save();
+                         } )
                       ],
                     )
                   ],
