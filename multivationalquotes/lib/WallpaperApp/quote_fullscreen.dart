@@ -24,7 +24,7 @@ class _FullScreenQuotePageState extends State<FullScreenQuotePage> {
   BannerAd createBannerAdd() {
     return BannerAd(
         targetingInfo: targetingInfo,
-        adUnitId: BannerAd.testAdUnitId,
+        adUnitId: "ca-app-pub-2635835949649414/5596025507",
         size: AdSize.smartBanner,
         listener: (MobileAdEvent event) {
           print('Bnner Event: $event');
@@ -34,7 +34,7 @@ class _FullScreenQuotePageState extends State<FullScreenQuotePage> {
   InterstitialAd createInterstitialAd() {
     return InterstitialAd(
         targetingInfo: targetingInfo,
-        adUnitId: InterstitialAd.testAdUnitId,
+        adUnitId: "ca-app-pub-2635835949649414/4025931141",
         listener: (MobileAdEvent event) {
           print('interstitial event: $event');
         });
@@ -46,7 +46,7 @@ class _FullScreenQuotePageState extends State<FullScreenQuotePage> {
     super.initState(); 
     // ADS ADMOB
     
-    FirebaseAdMob.instance.initialize(appId: 'ca-app-pub-2635835949649414~7580091406');
+    FirebaseAdMob.instance.initialize(appId: 'ca-app-pub-2635835949649414~2841869658');
     _bannerAd = createBannerAdd()..load();
 
      _interstitialAd = createInterstitialAd()..load();
@@ -108,7 +108,12 @@ class _FullScreenQuotePageState extends State<FullScreenQuotePage> {
                         ),
                         onPressed: () => Navigator.of(context).pop(),
                       ),
-                      actions: [IconButton(icon: Icon(Icons.share, size: 36,), onPressed: () => share(context, widget.quote) , )],
+                      actions: [IconButton(icon: Icon(Icons.share, size: 36,), 
+                      onPressed: ()  {
+                        _bannerAd?.dispose();
+                        _bannerAd = null;
+                        _interstitialAd?.show();
+                        share(context, widget.quote); }, )],
                     )
                   ],
                 ),

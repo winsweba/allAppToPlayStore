@@ -7,11 +7,11 @@ class AdmobService {
  
   static BannerAd get bannerAd => _bannerAd;
   static String get bannerAdUnitId => Platform.isAndroid
-      ? 'ca-app-pub-3940256099942544/6300978111'
+      ? 'ca-app-pub-2635835949649414/8022399364'
       : 'ca-app-pub-3940256099942544/2934735716';
 
   static String get iOSInterstitialAdUnitID => Platform.isAndroid
-      ? 'ca-app-pub-3940256099942544/1033173712'
+      ? 'ca-app-pub-2635835949649414/8186050891'
       : 'cca-app-pub-3940256099942544/1033173712';
 
   static initialize() {

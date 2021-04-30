@@ -27,7 +27,7 @@ class _QuoteScreenState extends State<QuoteScreen> {
   BannerAd createBannerAdd() {
     return BannerAd(
         targetingInfo: targetingInfo,
-        adUnitId: BannerAd.testAdUnitId,
+        adUnitId: "ca-app-pub-2635835949649414/5596025507",
         size: AdSize.smartBanner,
         listener: (MobileAdEvent event) {
           print('Bnner Event: $event');
@@ -37,7 +37,7 @@ class _QuoteScreenState extends State<QuoteScreen> {
   InterstitialAd createInterstitialAd() {
     return InterstitialAd(
         targetingInfo: targetingInfo,
-        adUnitId: InterstitialAd.testAdUnitId,
+        adUnitId: "ca-app-pub-2635835949649414/4025931141",
         listener: (MobileAdEvent event) {
           print('interstitial event: $event');
         });
@@ -83,7 +83,7 @@ class _QuoteScreenState extends State<QuoteScreen> {
     // 
     // ADS ADMOB
     
-    FirebaseAdMob.instance.initialize(appId: 'ca-app-pub-2635835949649414~7580091406');
+    FirebaseAdMob.instance.initialize(appId: 'ca-app-pub-2635835949649414~2841869658');
     _bannerAd = createBannerAdd()..load();
 
      _interstitialAd = createInterstitialAd()..load();
@@ -100,9 +100,9 @@ class _QuoteScreenState extends State<QuoteScreen> {
   @override
   Widget build(BuildContext context) {
 
-    // Timer(Duration(seconds: 10), () {
-    //   _bannerAd?.show();
-    // });
+    Timer(Duration(seconds: 10), () {
+      _bannerAd?.show();
+    });
 
     return new Scaffold(
         appBar: new AppBar(

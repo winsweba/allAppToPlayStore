@@ -2,6 +2,7 @@
 xmlns:tools="http://schemas.android.com/tools"
     package="com.winsweb.winchseter.roomdesigner">
 
+    <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"></uses-permission>
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"></uses-permission>
     
@@ -46,7 +47,7 @@ xmlns:tools="http://schemas.android.com/tools"
 
             <meta-data
             android:name="com.google.android.gms.ads.APPLICATION_ID"
-            android:value="ca-app-pub-3940256099942544~3347511713"/>
+            android:value="ca-app-pub-2635835949649414~2361495687"/>
 
     </application>
 </manifest>

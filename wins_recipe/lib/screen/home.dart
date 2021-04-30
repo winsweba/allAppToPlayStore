@@ -43,7 +43,8 @@ class _HomeState extends State<Home> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Stack(children: <Widget>[
+      body: Stack(
+        children: <Widget>[
         Container(
           height: MediaQuery.of(context).size.height,
           width: MediaQuery.of(context).size.width,
@@ -95,6 +96,31 @@ class _HomeState extends State<Home> {
                   width: MediaQuery.of(context).size.width,
                   child: Row(
                     children: <Widget>[
+
+
+
+
+
+
+                      
+                      Expanded(
+                        child: TextField(
+                          textAlign: TextAlign.center,
+                          controller: textEditingController,
+                          decoration: InputDecoration(
+                            hintText: "I'm here for you",
+                            border: InputBorder.none,
+                            hintStyle: TextStyle(
+                              fontSize: 18,
+                              color: Colors.grey,
+                            ),
+                          ),
+                          style: TextStyle(fontSize: 18),
+                        ),
+                      ),
+
+                      SizedBox(width: 16),
+                      
                       InkWell(
                         onTap: () {
                           if (textEditingController.text.isNotEmpty) {
@@ -117,22 +143,8 @@ class _HomeState extends State<Home> {
                           ),
                         ),
                       ),
-                      SizedBox(width: 16),
-                      Expanded(
-                        child: TextField(
-                          textAlign: TextAlign.center,
-                          controller: textEditingController,
-                          decoration: InputDecoration(
-                            hintText: "I'm here for you",
-                            border: InputBorder.none,
-                            hintStyle: TextStyle(
-                              fontSize: 18,
-                              color: Colors.grey,
-                            ),
-                          ),
-                          style: TextStyle(fontSize: 18),
-                        ),
-                      ),
+                      
+
                     ],
                   ),
                 ),
@@ -162,7 +174,19 @@ class _HomeState extends State<Home> {
             ),
           ),
         ),
-      ]),
+      ]
+      ),
+
+      // ADMOB BANNER
+      // bottomNavigationBar: Container(
+      //   height: 50,
+      //   child: AdWidget(
+      //     key: UniqueKey(),
+      //     ad: AdmobService.createBannerAd()..load(),
+      //   ),
+      // ),
+
+
     );
   }
 }

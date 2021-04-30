@@ -1,4 +1,4 @@
-package com.example.wallpaperapp
+package com.winsweb.winchseter.wallpaperapp
 
 import io.flutter.embedding.android.FlutterActivity
 

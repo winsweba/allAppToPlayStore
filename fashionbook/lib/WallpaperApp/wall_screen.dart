@@ -25,7 +25,7 @@ class _WallScreenState extends State<WallScreen> {
   BannerAd createBannerAdd() {
     return BannerAd(
         targetingInfo: targetingInfo,
-        adUnitId: BannerAd.testAdUnitId,
+        adUnitId: "ca-app-pub-2635835949649414/4879891971",
         size: AdSize.smartBanner,
         listener: (MobileAdEvent event) {
           print('Bnner Event: $event');
@@ -35,7 +35,7 @@ class _WallScreenState extends State<WallScreen> {
   InterstitialAd createInterstitialAd() {
     return InterstitialAd(
         targetingInfo: targetingInfo,
-        adUnitId: InterstitialAd.testAdUnitId,
+        adUnitId: "ca-app-pub-2635835949649414/5043543508",
         listener: (MobileAdEvent event) {
           print('interstitial event: $event');
         });
@@ -61,7 +61,7 @@ class _WallScreenState extends State<WallScreen> {
     
     // ADS ADMOB
     
-    FirebaseAdMob.instance.initialize(appId: 'ca-app-pub-2635835949649414~7580091406');
+    FirebaseAdMob.instance.initialize(appId: 'ca-app-pub-2635835949649414~3949953683');
     _bannerAd = createBannerAdd()..load();
 
      _interstitialAd = createInterstitialAd()..load();
