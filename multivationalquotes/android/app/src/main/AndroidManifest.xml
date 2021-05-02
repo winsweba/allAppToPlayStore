@@ -5,7 +5,7 @@ xmlns:tools="http://schemas.android.com/tools"
     <uses-permission android:name="android.permission.INTERNET" />
 
    <application
-        android:label="multivationalquotes"
+        android:label="Multivational Quotes"
         android:icon="@mipmap/ic_launcher">
         <activity
             android:name=".MainActivity"

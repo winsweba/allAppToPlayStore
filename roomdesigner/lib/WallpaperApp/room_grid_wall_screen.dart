@@ -26,7 +26,7 @@ class _WallScreenState extends State<WallScreen> {
   BannerAd createBannerAdd() {
     return BannerAd(
         targetingInfo: targetingInfo,
-        adUnitId:"ca-app-pub-2635835949649414/5477839530",
+        adUnitId:"ca-app-pub-2635835949649414/8735332345",
         size: AdSize.smartBanner,
         listener: (MobileAdEvent event) {
           print('Bnner Event: $event');
@@ -36,7 +36,7 @@ class _WallScreenState extends State<WallScreen> {
   InterstitialAd createInterstitialAd() {
     return InterstitialAd(
         targetingInfo: targetingInfo,
-        adUnitId: "ca-app-pub-2635835949649414/5286267848",
+        adUnitId: "ca-app-pub-2635835949649414/6909462394",
         listener: (MobileAdEvent event) {
           print('interstitial event: $event');
         });

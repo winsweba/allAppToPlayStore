@@ -8,35 +8,6 @@
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:547151552975:android:d99c985f7ac666227af2ba",
-        "android_client_info": {
-          "package_name": "com.example.lovequotes"
-        }
-      },
-      "oauth_client": [
-        {
-          "client_id": "547151552975-99qhvg7u2a30cn1lsam5vegia06dhpek.apps.googleusercontent.com",
-          "client_type": 3
-        }
-      ],
-      "api_key": [
-        {
-          "current_key": "AIzaSyA2_gsADk4mvL4al5UkRr7heUU0MpM-MPA"
-        }
-      ],
-      "services": {
-        "appinvite_service": {
-          "other_platform_oauth_client": [
-            {
-              "client_id": "547151552975-99qhvg7u2a30cn1lsam5vegia06dhpek.apps.googleusercontent.com",
-              "client_type": 3
-            }
-          ]
-        }
-      }
-    },
-    {
-      "client_info": {
         "mobilesdk_app_id": "1:547151552975:android:0659c170c7052af67af2ba",
         "android_client_info": {
           "package_name": "com.winsweb.win.winchester"
@@ -62,7 +33,8 @@
             }
           ]
         }
-      }
+      },
+      "admob_app_id": "ca-app-pub-2635835949649414~3949953683"
     },
     {
       "client_info": {
@@ -99,7 +71,8 @@
             }
           ]
         }
-      }
+      },
+      "admob_app_id": "ca-app-pub-2635835949649414~4356329552"
     },
     {
       "client_info": {
@@ -166,7 +139,8 @@
             }
           ]
         }
-      }
+      },
+      "admob_app_id": "ca-app-pub-2635835949649414~2841869658"
     },
     {
       "client_info": {
@@ -203,7 +177,8 @@
             }
           ]
         }
-      }
+      },
+      "admob_app_id": "ca-app-pub-2635835949649414~2361495687"
     },
     {
       "client_info": {
