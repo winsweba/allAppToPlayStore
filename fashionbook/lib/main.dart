@@ -1,8 +1,7 @@
+import 'package:fashionbook/WallpaperApp/splash_screen.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_downloader/flutter_downloader.dart';
-
-import 'WallpaperApp/wall_screen.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -26,7 +25,7 @@ class MyApp extends StatelessWidget {
         primarySwatch: Colors.blue,
       ),
       // home: new WallScreen(analytics: analytics, observer: observer),
-      home: new WallScreen(),
+      home: new SplashScreen(),
     );
   }
 }

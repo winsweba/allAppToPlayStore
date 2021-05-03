@@ -9,7 +9,8 @@ xmlns:tools="http://schemas.android.com/tools"
    <application
         android:label="Fashion Book"
         android:icon="@mipmap/ic_launcher"
-        android:requestLegacyExternalStorage="true">
+        android:requestLegacyExternalStorage="true"
+        android:extractNativeLibs="true">
 
 
          <provider
