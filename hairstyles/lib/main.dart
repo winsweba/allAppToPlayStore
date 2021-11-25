@@ -1,8 +1,7 @@
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_downloader/flutter_downloader.dart';
-
-import 'WallpaperApp/hair_grid_screen.dart';
+import 'package:hairstyles/screens/splash_screen.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -21,12 +20,12 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return new MaterialApp(
       debugShowCheckedModeBanner: false,
-      title: 'Flutter Demo',
+      title: 'Hairstyles',
       theme: new ThemeData(
         primarySwatch: Colors.blue,
       ),
       // home: new WallScreen(analytics: analytics, observer: observer),
-      home: new WallScreen(),
+      home: new SplashScreen(),
     );
   }
 }

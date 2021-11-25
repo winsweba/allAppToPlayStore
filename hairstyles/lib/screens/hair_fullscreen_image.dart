@@ -32,6 +32,7 @@ class _FullScreenImagePageState extends State<FullScreenImagePage> {
   BannerAd createBannerAdd() {
     return BannerAd(
         targetingInfo: targetingInfo,
+        // adUnitId: BannerAd.testAdUnitId,
         adUnitId: "ca-app-pub-2635835949649414/5477839530",
         size: AdSize.smartBanner,
         listener: (MobileAdEvent event) {
@@ -42,6 +43,7 @@ class _FullScreenImagePageState extends State<FullScreenImagePage> {
   InterstitialAd createInterstitialAd() {
     return InterstitialAd(
         targetingInfo: targetingInfo,
+        // adUnitId: InterstitialAd.testAdUnitId,
         adUnitId: "ca-app-pub-2635835949649414/5286267848",
         listener: (MobileAdEvent event) {
           print('interstitial event: $event');
@@ -80,7 +82,9 @@ class _FullScreenImagePageState extends State<FullScreenImagePage> {
   Widget build(BuildContext context) {
 
     Timer(Duration(seconds: 10), () {
-      _bannerAd?.show();
+      _bannerAd?.show(
+        anchorOffset: kBottomNavigationBarHeight
+      );
     });
     
     return new Scaffold(
@@ -131,6 +135,26 @@ class _FullScreenImagePageState extends State<FullScreenImagePage> {
                   ],
                 ),
               )
+            ],
+          ),
+        ),
+      ),
+      bottomNavigationBar: BottomAppBar(
+        child: Container(
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              ElevatedButton(
+                style: ElevatedButton.styleFrom(
+                  padding: EdgeInsets.symmetric(horizontal: 50),
+                  shape: RoundedRectangleBorder(),
+                  primary: Theme.of(context).accentColor,
+                ),
+                onPressed: () {
+                  _save();
+                },
+                child: Text("Save image"),
+              ),
             ],
           ),
         ),

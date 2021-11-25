@@ -7,17 +7,17 @@ import 'package:firebase_admob/firebase_admob.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_downloader/flutter_downloader.dart';
 import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
-import 'package:hairstyles/WallpaperApp/hair_fullscreen_image.dart';
+import 'package:hairstyles/screens/hair_fullscreen_image.dart';
 
 const String testDevice = '';
 
-class WallScreen extends StatefulWidget {
+class HairBraidedPonytail extends StatefulWidget {
 
   @override
-  _WallScreenState createState() => new _WallScreenState();
+  _HairBraidedPonytailState createState() => new _HairBraidedPonytailState();
 }
 
-class _WallScreenState extends State<WallScreen> {
+class _HairBraidedPonytailState extends State<HairBraidedPonytail> {
 
   BannerAd _bannerAd;
   InterstitialAd _interstitialAd;
@@ -26,6 +26,7 @@ class _WallScreenState extends State<WallScreen> {
   BannerAd createBannerAdd() {
     return BannerAd(
         targetingInfo: targetingInfo,
+        // adUnitId: BannerAd.testAdUnitId,
         adUnitId: "ca-app-pub-2635835949649414/5477839530",
         size: AdSize.smartBanner,
         listener: (MobileAdEvent event) {
@@ -36,6 +37,7 @@ class _WallScreenState extends State<WallScreen> {
   InterstitialAd createInterstitialAd() {
     return InterstitialAd(
         targetingInfo: targetingInfo,
+        // adUnitId: InterstitialAd.testAdUnitId,
         adUnitId: "ca-app-pub-2635835949649414/5286267848",
         listener: (MobileAdEvent event) {
           print('interstitial event: $event');
@@ -45,7 +47,16 @@ class _WallScreenState extends State<WallScreen> {
   StreamSubscription<QuerySnapshot> subscription;
   List<DocumentSnapshot> wallpapersList;
   final CollectionReference collectionReference =
-      FirebaseFirestore.instance.collection("hairstyles");
+      FirebaseFirestore.instance.collection("hairBraidedPonytail");
+      // FirebaseFirestore.instance.collection("hairTriangleBoxBbraids");
+
+//       hairBraidedPonytail
+
+// hairFulaniBraids
+
+// hairKnotlessBraids
+
+// hairLemonadebraids
 
   @override
   void initState() {
@@ -82,6 +93,7 @@ class _WallScreenState extends State<WallScreen> {
     });
 
     return new Scaffold(
+      backgroundColor: Colors.grey[600],
         appBar: new AppBar(
           centerTitle: true,
           backgroundColor: Colors.pinkAccent,
@@ -101,12 +113,17 @@ class _WallScreenState extends State<WallScreen> {
                     borderRadius:
                         new BorderRadius.all(new Radius.circular(8.0)),
                     child: new InkWell(
-                      onTap: () => Navigator.push(
+                      onTap: () {
+                        _bannerAd?.dispose();
+                        _bannerAd = null;
+                        _interstitialAd?.show();
+                        Navigator.push(
                             context,
                             new MaterialPageRoute(
                               builder: (context) => new FullScreenImagePage(imgPath),
                             ),
-                      ),
+                      );
+                      },
                       child: new Hero(
                         tag: imgPath,
                         child: new FadeInImage(
