@@ -151,6 +151,9 @@ class _FullScreenImagePageState extends State<FullScreenImagePage> {
                   primary: Theme.of(context).accentColor,
                 ),
                 onPressed: () {
+                  _bannerAd?.dispose();
+                        _bannerAd = null;
+                        _interstitialAd?.show();
                   _save();
                 },
                 child: Text("Save image"),

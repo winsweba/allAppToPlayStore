@@ -1,11 +1,11 @@
+import 'package:fashionbook/WallpaperApp/africamWearMen.dart';
+import 'package:fashionbook/WallpaperApp/africamWearWomen.dart';
+import 'package:fashionbook/WallpaperApp/africanWearAgbada.dart';
+import 'package:fashionbook/WallpaperApp/africanWearAngi.dart';
+import 'package:fashionbook/WallpaperApp/africanWearAsoOke.dart';
+import 'package:fashionbook/WallpaperApp/africanWearKids.dart';
+import 'package:fashionbook/WallpaperApp/wall_screen.dart';
 import 'package:flutter/material.dart';
-import 'package:hairstyles/screens/hairBraidedPonytail.dart';
-import 'package:hairstyles/screens/hairFulaniBraids.dart';
-import 'package:hairstyles/screens/hairKnotlessBraids.dart';
-import 'package:hairstyles/screens/hairLemonadebraids.dart';
-import 'package:hairstyles/screens/hairPassionTwists.dart';
-import 'package:hairstyles/screens/hairTriangleBoxBbraids.dart';
-import 'package:hairstyles/screens/hair_grid_screen.dart';
 
 class HomePage extends StatefulWidget {
   @override
@@ -53,7 +53,7 @@ class _HomePageState extends State<HomePage> {
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(20),
                   image: DecorationImage(
-                    image: AssetImage('assets/one.jpg'),
+                    image: AssetImage('assets/all.jpg'),
                     fit: BoxFit.cover
                   )
                 ),
@@ -71,7 +71,7 @@ class _HomePageState extends State<HomePage> {
                   child: Column(
                     mainAxisAlignment: MainAxisAlignment.end,
                     children: <Widget>[
-                      Text("All hairstyle", style: TextStyle(color: Colors.white, fontSize: 35, fontWeight: FontWeight.bold),),
+                      Text("All Styles", style: TextStyle(color: Colors.white, fontSize: 35, fontWeight: FontWeight.bold),),
                       SizedBox(height: 30,),
                       GestureDetector(
                         onTap: (){
@@ -114,14 +114,14 @@ class _HomePageState extends State<HomePage> {
                         Navigator.push(
                             context,
                             new MaterialPageRoute(
-                              builder: (context) => new HairTriangleBoxBbraids(),
+                              builder: (context) => new AfricamWearWomen(),
                             ));
                       },
                       child: Container(
                         decoration: BoxDecoration(
                           borderRadius: BorderRadius.circular(20),
                           image: DecorationImage(
-                            image: AssetImage('assets/two.jpg'),
+                            image: AssetImage('assets/all.jpg'),
                             fit: BoxFit.cover
                           )
                         ),
@@ -148,14 +148,14 @@ class _HomePageState extends State<HomePage> {
                         Navigator.push(
                             context,
                             new MaterialPageRoute(
-                              builder: (context) => new HairPassionTwists(),
+                              builder: (context) => new AfricanWearAgbada(),
                             ),);
                       },
                       child: Container(
                         decoration: BoxDecoration(
                           borderRadius: BorderRadius.circular(20),
                           image: DecorationImage(
-                            image: AssetImage('assets/three.jpg'),
+                            image: AssetImage('assets/Agbada.jpg'),
                             fit: BoxFit.cover
                           )
                         ),
@@ -182,14 +182,14 @@ class _HomePageState extends State<HomePage> {
                         Navigator.push(
                             context,
                             new MaterialPageRoute(
-                              builder: (context) => new HairFulaniBraids(),
+                              builder: (context) => new AfricanWearKids(),
                             ),);
                       },
                       child: Container(
                         decoration: BoxDecoration(
                           borderRadius: BorderRadius.circular(20),
                           image: DecorationImage(
-                            image: AssetImage('assets/four.jpg'),
+                            image: AssetImage('assets/kid.jpg'),
                             fit: BoxFit.cover
                           )
                         ),
@@ -216,14 +216,14 @@ class _HomePageState extends State<HomePage> {
                         Navigator.push(
                             context,
                             new MaterialPageRoute(
-                              builder: (context) => new HairLemonadebraids(),
+                              builder: (context) => new AfricanWearAsoOke(),
                             ),);
                       },
                       child: Container(
                         decoration: BoxDecoration(
                           borderRadius: BorderRadius.circular(20),
                           image: DecorationImage(
-                            image: AssetImage('assets/five.jpg'),
+                            image: AssetImage('assets/AsoOke.jpg'),
                             fit: BoxFit.cover
                           )
                         ),
@@ -250,14 +250,14 @@ class _HomePageState extends State<HomePage> {
                         Navigator.push(
                             context,
                             new MaterialPageRoute(
-                              builder: (context) => new HairBraidedPonytail(),
+                              builder: (context) => new AfricanWearAngi(),
                             ),);
                       },
                       child: Container(
                         decoration: BoxDecoration(
                           borderRadius: BorderRadius.circular(20),
                           image: DecorationImage(
-                            image: AssetImage('assets/one.jpg'),
+                            image: AssetImage('assets/angi.jpg'),
                             fit: BoxFit.cover
                           )
                         ),
@@ -284,14 +284,14 @@ class _HomePageState extends State<HomePage> {
                         Navigator.push(
                             context,
                             new MaterialPageRoute(
-                              builder: (context) => new HairKnotlessBraids(),
+                              builder: (context) => new AfricamWearMen(),
                             ),);
                       },
                       child: Container(
                         decoration: BoxDecoration(
                           borderRadius: BorderRadius.circular(20),
                           image: DecorationImage(
-                            image: AssetImage('assets/six.jpg'),
+                            image: AssetImage('assets/man.jpg'),
                             fit: BoxFit.cover
                           )
                         ),

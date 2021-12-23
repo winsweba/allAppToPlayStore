@@ -10,13 +10,13 @@ import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
 
 const String testDevice = '';
 
-class WallScreen extends StatefulWidget {
+class AfricanWearAsoOke extends StatefulWidget {
 
   @override
-  _WallScreenState createState() => new _WallScreenState();
+  _AfricanWearAsoOkeState createState() => new _AfricanWearAsoOkeState();
 }
 
-class _WallScreenState extends State<WallScreen> {
+class _AfricanWearAsoOkeState extends State<AfricanWearAsoOke> {
 
   BannerAd _bannerAd;
   InterstitialAd _interstitialAd;
@@ -45,7 +45,7 @@ class _WallScreenState extends State<WallScreen> {
   StreamSubscription<QuerySnapshot> subscription;
   List<DocumentSnapshot> wallpapersList;
   final CollectionReference collectionReference =
-      FirebaseFirestore.instance.collection("wallpapers");
+      FirebaseFirestore.instance.collection("africanWearAsoOke");
 
 //       africamWearMen
 
